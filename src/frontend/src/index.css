@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "BricolageGrotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "BricolageGrotesque";
+    --font-body: "DMSans";
+    --font-mono: "ui-monospace", "SFMono-Regular", monospace;
+    --radius: 0.5rem;
+
+    /* Warm cream background */
+    --background: 0.97 0.012 55;
+    --foreground: 0.15 0.025 30;
+    --card: 1.0 0.008 55;
+    --card-foreground: 0.15 0.025 30;
+    --popover: 1.0 0.008 55;
+    --popover-foreground: 0.15 0.025 30;
+
+    /* Rust / industrial primary */
+    --primary: 0.52 0.2 28;
+    --primary-foreground: 0.98 0.01 55;
+
+    /* Warm neutral secondary */
+    --secondary: 0.9 0.025 50;
+    --secondary-foreground: 0.28 0.03 30;
+
+    --muted: 0.93 0.018 50;
+    --muted-foreground: 0.5 0.04 30;
+
+    /* WhatsApp green accent */
+    --accent: 0.55 0.18 142;
+    --accent-foreground: 0.98 0.01 55;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.01 55;
+
+    --border: 0.9 0.018 50;
+    --input: 0.93 0.018 50;
+    --ring: 0.52 0.2 28;
+
+    --chart-1: 0.52 0.2 28;
+    --chart-2: 0.55 0.18 142;
+    --chart-3: 0.7 0.15 50;
+    --chart-4: 0.58 0.16 12;
+    --chart-5: 0.65 0.14 280;
+
+    --sidebar: 0.2 0.01 280;
+    --sidebar-foreground: 0.95 0.02 280;
+    --sidebar-primary: 0.55 0.18 142;
+    --sidebar-primary-foreground: 0.98 0.01 280;
+    --sidebar-accent: 0.7 0.15 50;
+    --sidebar-accent-foreground: 0.15 0.02 280;
+    --sidebar-border: 0.28 0.01 280;
+    --sidebar-ring: 0.55 0.18 142;
+  }
+
+  .dark {
+    --background: 0.12 0.01 30;
+    --foreground: 0.95 0.018 50;
+    --card: 0.16 0.015 30;
+    --card-foreground: 0.95 0.018 50;
+    --popover: 0.2 0.015 30;
+    --popover-foreground: 0.95 0.018 50;
+
+    --primary: 0.65 0.22 28;
+    --primary-foreground: 0.12 0.01 30;
+
+    --secondary: 0.25 0.025 30;
+    --secondary-foreground: 0.88 0.02 50;
+    --muted: 0.22 0.018 30;
+    --muted-foreground: 0.6 0.02 50;
+
+    --accent: 0.65 0.2 142;
+    --accent-foreground: 0.12 0.01 30;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.12 0.01 30;
+
+    --border: 0.25 0.015 30;
+    --input: 0.25 0.015 30;
+    --ring: 0.65 0.2 28;
+
+    --chart-1: 0.65 0.22 28;
+    --chart-2: 0.65 0.2 142;
+    --chart-3: 0.75 0.18 50;
+    --chart-4: 0.65 0.18 12;
+    --chart-5: 0.72 0.16 280;
+
+    --sidebar: 0.16 0.01 30;
+    --sidebar-foreground: 0.95 0.02 50;
+    --sidebar-primary: 0.65 0.2 142;
+    --sidebar-primary-foreground: 0.12 0.01 30;
+    --sidebar-accent: 0.75 0.18 50;
+    --sidebar-accent-foreground: 0.12 0.01 30;
+    --sidebar-border: 0.25 0.01 30;
+    --sidebar-ring: 0.65 0.2 142;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), "BricolageGrotesque", sans-serif;
+  }
+
+  .font-body {
+    font-family: var(--font-body), "DMSans", sans-serif;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 8px 32px oklch(0.15 0.02 30 / 0.12), 0 2px 8px
+      oklch(0.15 0.02 30 / 0.08);
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 1px 4px oklch(0.15 0.02 30 / 0.08);
+  }
+
+  .shadow-rust {
+    box-shadow: 0 4px 24px oklch(0.52 0.2 28 / 0.2);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Entrance animations */
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease both;
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.25s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  /* Rust stripe decoration */
+  .rust-stripe {
+    background: repeating-linear-gradient(
+      -45deg,
+      oklch(0.52 0.2 28 / 0.06) 0px,
+      oklch(0.52 0.2 28 / 0.06) 2px,
+      transparent 2px,
+      transparent 12px
+    );
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-up,
+    .animate-fade-in,
+    .animate-slide-down {
+      animation: none;
+    }
+
+    .transition-smooth {
+      transition: none;
+    }
+  }
+}

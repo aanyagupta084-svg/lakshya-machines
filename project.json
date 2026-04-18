@@ -1,0 +1,23 @@
+{
+  "overview": "Professional B2B showcase website for Lakshya Keshari's food processing machinery business in Varanasi. Displays 6 core machines with product details, contact info, and WhatsApp integration for lead generation.",
+  "features": [
+    "Product catalog with 6 machines (Pizza oven, Spiral mixer, Planetary mixer, Automatic roti machine, Dough kneading machine, Sugarcane juice machine)",
+    "WhatsApp contact integration with pre-filled messages",
+    "Product detail cards with inquiry buttons",
+    "Hero section with business branding",
+    "About section with owner info and location",
+    "Contact form and footer with full business info",
+    "Mobile responsive design"
+  ],
+  "category": "showcase",
+  "tags": [
+    "food-processing",
+    "machinery",
+    "b2b",
+    "showcase",
+    "kitchen-equipment",
+    "whatsapp",
+    "lead-generation"
+  ],
+  "last_updated": "2026-04-18T21:34:52.386Z"
+}

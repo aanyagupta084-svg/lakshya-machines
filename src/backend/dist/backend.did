@@ -1,0 +1,23 @@
+type InquiryInput = 
+ record {
+   email: text;
+   machineInterest: text;
+   message: text;
+   name: text;
+   phone: text;
+ };
+type InquiryId = nat;
+type Inquiry = 
+ record {
+   email: text;
+   id: InquiryId;
+   machineInterest: text;
+   message: text;
+   name: text;
+   phone: text;
+   timestamp: int;
+ };
+service : {
+  listInquiries: () -> (vec Inquiry) query;
+  submitInquiry: (input: InquiryInput) -> (Inquiry);
+}
